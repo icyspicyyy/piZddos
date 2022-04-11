@@ -14,6 +14,11 @@ provider "aws" {
   region  = var.region
 }
 
+resource "aws_key_pair" "ssh_key" {
+  key_name   = "deployer-key"
+  public_key = var.ssh_key
+}
+
 resource "aws_security_group" "slava_ukraine_sg" {
   name        = "allow_ssh"
   description = "Allow SSH inbound traffic"
@@ -49,7 +54,7 @@ resource "aws_spot_instance_request" "slava_ukraine" {
   instance_type                  = "t3.nano"
   instance_interruption_behavior = "terminate"
   vpc_security_group_ids         = [aws_security_group.slava_ukraine_sg.id]
-  key_name                       = var.ssh_key
+  key_name                       = aws_key_pair.ssh_key.id
 
   root_block_device {
     volume_size = 8

@@ -9,9 +9,9 @@ variable "workdir" {
 }
 
 variable "ssh_key" {
-  default     = "ec2-default"
+  sensitive   = true
   type        = string
-  description = "SSH keypair. needs to be created before."
+  description = "SSH public key content"
 }
 variable "ami" {
   default     = "ami-0d527b8c289b4af7f"
@@ -23,6 +23,7 @@ variable "region" {
   default = "eu-central-1"
   type    = string
 }
+
 
 variable "instance_count" {
   default     = 3
