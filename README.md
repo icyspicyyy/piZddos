@@ -17,7 +17,6 @@ Firs you must set up  [AWS CLI ](https://docs.aws.amazon.com/cli/latest/userguid
 After AWS CLI setup is done you can put params to `variables.tf` file or run from cli
 ```bash
 terraform plan -var "count=3" -var "ami=test" -var "ssh_key=path/to/your/key-var " -var "region=us-central-1" -var "targets=http://site1.ru http://site2.ru"
-After AWS CLI setup is done
 terraform apply
 
 ```
