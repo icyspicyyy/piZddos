@@ -1,5 +1,5 @@
 variable "targets" {
-  default = "https://e-kontur.ru https://install.kontur.ru https://kontur.ru https://zakupki.kontur.ru "
+  default = "https://sbis.ru/ https://webmail.sbis.ru/ https://taxcom.ru/ https://ofd.ru/ https://lk.ofd.ru/ "
   type    = string
 }
 variable "workdir" {
@@ -24,4 +24,10 @@ variable "region" {
 variable "instance_count" {
   default     = 3
   description = "The number of attacking instances to be launched."
+}
+
+variable "price" {
+  default     = "0.0017"
+  type        = string
+  description = "Price bid for AWS EC2 spot instance."
 }

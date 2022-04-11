@@ -45,7 +45,7 @@ resource "aws_spot_instance_request" "slava_ukraine" {
   count                          = var.instance_count
   ami                            = var.ami
   spot_type                      = "persistent"
-  spot_price                     = "0.0018"
+  spot_price                     = var.price
   instance_type                  = "t3.nano"
   instance_interruption_behavior = "terminate"
   vpc_security_group_ids         = [aws_security_group.slava_ukraine_sg.id]
