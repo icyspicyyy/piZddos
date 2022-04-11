@@ -1,6 +1,7 @@
 variable "targets" {
-  default = "https://sbis.ru/ https://webmail.sbis.ru/ https://taxcom.ru/ https://ofd.ru/ https://lk.ofd.ru/ "
-  type    = string
+  default     = "https://sbis.ru/ https://webmail.sbis.ru/ https://taxcom.ru/ https://ofd.ru/ https://lk.ofd.ru/ "
+  type        = string
+  description = "List of targets to attack."
 }
 variable "workdir" {
   default = "piZddos"
@@ -8,12 +9,14 @@ variable "workdir" {
 }
 
 variable "ssh_key" {
-  default = "ec2-default"
-  type    = string
+  default     = "ec2-default"
+  type        = string
+  description = "SSH keypair. needs to be created before."
 }
 variable "ami" {
-  default = "ami-0d527b8c289b4af7f"
-  type    = string
+  default     = "ami-0d527b8c289b4af7f"
+  type        = string
+  description = "AMI to launch instance from"
 }
 
 variable "region" {
