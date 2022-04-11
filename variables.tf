@@ -1,5 +1,5 @@
 variable "targets" {
-  default = "https://cm.1tv.ru/  https://www.1tv.ru/live https://subscr.1tv.ru/ "
+  default = "https://e-kontur.ru https://install.kontur.ru https://kontur.ru https://zakupki.kontur.ru "
   type    = string
 }
 variable "workdir" {

