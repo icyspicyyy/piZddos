@@ -20,3 +20,8 @@ variable "region" {
   default = "eu-central-1"
   type    = string
 }
+
+variable "instance_count" {
+  default     = 3
+  description = "The number of attacking instances to be launched."
+}

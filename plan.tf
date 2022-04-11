@@ -42,7 +42,7 @@ resource "aws_security_group" "slava_ukraine_sg" {
 }
 
 resource "aws_spot_instance_request" "slava_ukraine" {
-  count                          = 3
+  count                          = var.instance_count
   ami                            = var.ami
   spot_type                      = "persistent"
   spot_price                     = "0.0018"
