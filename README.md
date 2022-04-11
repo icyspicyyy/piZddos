@@ -13,10 +13,15 @@ git clone https://github.com/icyspicyyy/piZddos.git
 
 ## Usage
 
-Firs you must set up  [AWS CLI ](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) and [terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli).
-After everything is set up you can put params to `variables.tf` file or run from cli
+- et up  [AWS CLI ](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) and [terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli).
+- Generate SSH key and copy it's content:
 ```bash
-terraform plan -var "count=3" -var "ami=test" -var "ssh_key=path/to/your/key-var " -var "region=us-central-1" -var "targets=http://site1.ru http://site2.ru"
+  ssh-keygen
+  cat ~\.ssh\id_rsa.pub
+```
+- put params to `variables.tf` file or run from cli
+```bash
+terraform plan -var "price=0.0017" -var "ssh_key=____YOUR_KEY_CONENT_FROM_PREVIOUS_STEP" -var "instance_count=3" -var "ami=ami-0d527b8c289b4af7f" -var "ssh_key=path/to/your/key-var " -var "region=eu-central-1" -var "targets=http://site1.ru http://site2.ru"
 terraform apply
 
 ```
