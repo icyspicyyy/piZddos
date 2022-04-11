@@ -24,7 +24,8 @@ terraform apply
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+Warning!
+You are using provided scripts at your own risk. Author does not bear any responsibility in case of misuse.
 
 Slava Ukraine! Glory to Ukraine!
 Русский военный корабль, иди нахуй!
