@@ -21,8 +21,8 @@ git clone https://github.com/icyspicyyy/piZddos.git
 ```
 - put params to `variables.tf` file or run from cli
 ```bash
-terraform plan -var "price=0.0017" -var "ssh_key=____YOUR_KEY_CONENT_FROM_PREVIOUS_STEP" -var "instance_count=3" -var "ami=ami-0d527b8c289b4af7f" -var "ssh_key=path/to/your/key-var " -var "region=eu-central-1" -var "targets=http://site1.ru http://site2.ru"
-terraform apply
+terraform plan -var "price=0.0019" -var "ssh_key=YOUR_KEY_CONTENT" -var "instance_count=3" -var "ami=ami-0d527b8c289b4af7f"  -var "region=eu-central-1" -var "targets=https://site.ru https://site2.ru"
+terraform apply -var "price=0.0019" -var "ssh_key=YOUR_KEY_CONTENT" -var "instance_count=3" -var "ami=ami-0d527b8c289b4af7f"  -var "region=eu-central-1" -var "targets=https://site.ru https://site2.ru"
 
 ```
 
